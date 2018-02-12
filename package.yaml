@@ -1,0 +1,47 @@
+name:                embadd
+version:             0.1.0.0
+github:              "tomasmcz/embadd"
+license:             BSD3
+author:              "Tomáš Musil"
+maintainer:          "tomik.musil@gmail.com"
+copyright:           "2018 Tomáš Musil"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+category:            NLP 
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/githubuser/embadd#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- lens
+- containers
+- array
+- data-default-class
+- hmatrix
+- hstatistics >= 0.3
+- readline >= 1.0
+- Chart
+- Chart-cairo
+
+library:
+  source-dirs: src
+
+executables:
+  embadd-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -O2
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - embadd

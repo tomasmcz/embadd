@@ -1,0 +1,7 @@
+resolver: lts-10.5
+
+packages:
+- .
+
+extra-deps:
+- readline-1.0.3.0
